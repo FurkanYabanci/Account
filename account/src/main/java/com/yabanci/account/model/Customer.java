@@ -1,5 +1,6 @@
 package com.yabanci.account.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -22,8 +23,12 @@ public class Customer {
 	
 	private String surname;
 	
-	@OneToMany(mappedBy = "customer",fetch = FetchType.LAZY)
-	private Set<Account> accounts;
+	@OneToMany(mappedBy = "customer",fetch = FetchType.EAGER)
+	private Set<Account> accounts = new HashSet<Account>();
+	
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Customer(String name, String surname) {
 		super();
@@ -104,9 +109,10 @@ public class Customer {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", name=" + name + ", surname=" + surname + ", accounts=" + accounts + "]";
+	}
 	
 }

@@ -3,7 +3,6 @@ package com.yabanci.account.model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -13,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -20,26 +20,27 @@ public class Transaction {
 
 	@Id
 	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID",strategy = "org.hibernate.id.UUIDGenerator")
+	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	private String id;
-	
+
 	@Enumerated(EnumType.STRING)
 	private TransactionType transactionType = TransactionType.INITIAL;
-	
+
 	private BigDecimal amount;
 	
 	private LocalDateTime transactionDate;
-	
-	@ManyToOne(fetch = FetchType.LAZY,optional = false,cascade = CascadeType.ALL)
-	@JoinColumn(name = "account_id",nullable = false)
-	private Account account;
 
-	public Transaction(TransactionType transactionType, BigDecimal amount, LocalDateTime transactionDate,
-			Account account) {
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "account_id", nullable = false)
+	private Account account;
+	
+	public Transaction() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Transaction(BigDecimal amount, Account account) {
 		super();
-		this.transactionType = transactionType;
 		this.amount = amount;
-		this.transactionDate = transactionDate;
 		this.account = account;
 	}
 
@@ -127,5 +128,5 @@ public class Transaction {
 			return false;
 		return true;
 	}
-	
+
 }

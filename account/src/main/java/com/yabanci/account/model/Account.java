@@ -2,6 +2,7 @@ package com.yabanci.account.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -29,8 +30,12 @@ public class Account {
 	@JoinColumn(name = "customer_id",nullable = false)
 	private Customer customer;
 	
-	@OneToMany(mappedBy = "account",fetch = FetchType.LAZY)
-	private Set<Transaction> transactions;
+	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private Set<Transaction> transactions = new HashSet<Transaction>();
+	
+	public Account() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Account(BigDecimal balance, LocalDateTime creationDate, Customer customer) {
 		super();

@@ -10,10 +10,13 @@ public class CustomerAccountDto {
 	private BigDecimal balance = BigDecimal.ZERO;
 	private Set<TransactionDto> transactions;
 	private LocalDateTime creationDate;
-	
-	public CustomerAccountDto(BigDecimal balance, LocalDateTime creationDate) {
+
+	public CustomerAccountDto(String id, BigDecimal balance, Set<TransactionDto> transactions,
+			LocalDateTime creationDate) {
 		super();
+		this.id = id;
 		this.balance = balance;
+		this.transactions = transactions;
 		this.creationDate = creationDate;
 	}
 
@@ -21,34 +24,16 @@ public class CustomerAccountDto {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
-
 	public BigDecimal getBalance() {
 		return balance;
-	}
-
-	public void setBalance(BigDecimal balance) {
-		this.balance = balance;
 	}
 
 	public Set<TransactionDto> getTransactions() {
 		return transactions;
 	}
 
-	public void setTransactions(Set<TransactionDto> transactions) {
-		this.transactions = transactions;
-	}
-
 	public LocalDateTime getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(LocalDateTime creationDate) {
-		this.creationDate = creationDate;
-	} 
-	
-	
-	
 }
