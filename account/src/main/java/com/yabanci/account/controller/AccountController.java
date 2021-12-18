@@ -1,5 +1,7 @@
 package com.yabanci.account.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +24,7 @@ public class AccountController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<AccountDto> createAccount(@RequestBody CreateAccountRequest createAccountRequest){
+	public ResponseEntity<AccountDto> createAccount(@Valid @RequestBody CreateAccountRequest createAccountRequest){
 		return ResponseEntity.ok(accountService.createAccount(createAccountRequest));
 	}
 }
