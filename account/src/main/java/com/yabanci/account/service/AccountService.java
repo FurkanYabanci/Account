@@ -39,7 +39,7 @@ public class AccountService {
 				LocalDateTime.now() , 
 				customer);
 		if (createAccountRequest.getInitialCredit().compareTo(BigDecimal.ZERO) > 0) {
-			Transaction transaction = new Transaction(createAccountRequest.getInitialCredit(),account);
+			Transaction transaction = new Transaction(createAccountRequest.getInitialCredit(),LocalDateTime.now(),account);
 			account.getTransactions().add(transaction);
 		} 
 		return accountDtoConverter.convert(accountRepository.save(account)); 

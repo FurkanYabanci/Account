@@ -38,11 +38,14 @@ public class Transaction {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Transaction(BigDecimal amount, Account account) {
+	public Transaction(BigDecimal amount, LocalDateTime transactionDate, Account account) {
 		super();
 		this.amount = amount;
+		this.transactionDate = transactionDate;
 		this.account = account;
 	}
+
+
 
 	public String getId() {
 		return id;
