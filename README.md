@@ -32,13 +32,19 @@ The assessment consists of an API to be used for opening a new “current accoun
 # Tech Stack
 
 • Java 11
+
 • Spring Boot
+
 • Spring Data JPA
+
 • Restful API 
+
 • H2 In memory database
+
 • Docker
 
 # Prerequisites
 
 • Maven
+
 • Docker
