@@ -19,14 +19,15 @@ The assessment consists of an API to be used for opening a new “current accoun
 • Another Endpoint will output the user information showing Name, Surname, balance, and transactions of the accounts.
 
 
-  The application has 2 apis
+   The application has 2 apis
   
 • AccountAPI
 
 • CustomerAPI
 
-POST /v1/account - creates a new account for existing customer
-GET /v1/customer/{customerId} - retrieves a customer
+  POST /v1/account - creates a new account for existing customer
+
+  GET /v1/customer/{customerId} - retrieves a customer
 
 # Tech Stack
 
