@@ -61,7 +61,7 @@ run it with the 'docker run -t account-0.0.2.jar' command.
 ___
 *$PORT: 8070*
 
-```ssh
+  ```ssh
   $ docker pull yabancifurkan/images:account-0.0.2.jar
    ```
    
