@@ -1,14 +1,14 @@
 # Account API For Existing Customer
 
-# Spring Boot Application
+### Spring Boot Application
 
 This project provides to create account for existing customers.
   
-# Summary
+### Summary
 
 The assessment consists of an API to be used for opening a new “current account” of already existing customers.
 
-# Requirements
+### Requirements
 
 • The API will expose an endpoint which accepts the user information (customerID, initialCredit).
 
@@ -31,7 +31,7 @@ The assessment consists of an API to be used for opening a new “current accoun
 
   GET /v1/customer/{customerId} - retrieves a customer
 
-# Tech Stack
+### Tech Stack
 
 • Java 11
 
@@ -45,7 +45,7 @@ The assessment consists of an API to be used for opening a new “current accoun
 
 • Docker
 
-# Prerequisites
+### Prerequisites
 
 • Maven
 
