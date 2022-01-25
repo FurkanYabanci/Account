@@ -53,6 +53,7 @@ The assessment consists of an API to be used for opening a new “current accoun
 
 #### Docker
 
+
 Search for 'yabancifurkan/images' from the Docker Hub site.
 
 Download the image with the 'docker pull yabancifurkan/images:account-0.0.2.jar' command,
